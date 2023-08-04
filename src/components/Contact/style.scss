@@ -1,0 +1,29 @@
+.contact-container {
+  input,
+  textarea {
+    resize: none;
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #666666;
+    }
+    &:focus,
+    &hover {
+      transition: 0.15s all ease-in-out;
+      border-color: aliceblue;
+    }
+  }
+
+  // .banner-contact {
+  //   width: 735px;
+  //   height: 880px;
+  //   img {
+  //     width: 100%;
+  //   }
+  // }
+
+  .btn-submit {
+    &:hover {
+      opacity: 1.1;
+    }
+  }
+}

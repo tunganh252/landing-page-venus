@@ -6,23 +6,23 @@ import { ReactNode } from 'react'
 
 export default function Chooses() {
     return (
-        <div className='features-container md:mt-[80px] pb-[80px]'>
-            <p className='text-2xl md:text-5xl font-bold'>WHY CHOOSE US</p>
+        <div id='whyChooseUs' className='features-container pt-10 lg:pt-[180px]'>
+            <p className='text-2xl lg:text-4xl xl:text-5xl font-bold'>WHY CHOOSE US</p>
 
-            <div className='mt-[60px] flex justify-between md:gap-x-8'>
+            <div className='mt-10  lg:mt-[60px] md:flex justify-between md:gap-x-4 lg:gap-x-8'>
                 <ChooseComp srcImg={bannerChoose1}>
-                    <div className='text-xl font-bold'>VGEM provides the full creative experience for you</div>
-                    <div className='mt-6'>Various VGEM packages that you can explore and enjoy to create your AI artwork unlimited.</div>
+                    <p className='text-lg xl:text-xl font-bold'>VGEM provides the full creative experience for you</p>
+                    <p className='mt-6 text-sm'>Various VGEM packages that you can explore and enjoy to create your AI artwork unlimited.</p>
                 </ChooseComp>
 
                 <ChooseComp srcImg={bannerChoose2} >
-                    <div className='text-xl font-bold'>Follow and like your talented artists on our platform</div>
-                    <div className='mt-6'>You can follow and like your talented artists, and see their latest works, never miss  from your favorite artists.</div>
+                    <p className='text-lg xl:text-xl font-bold'>Follow and like your talented artists on our platform</p>
+                    <p className='mt-6 text-sm'>You can follow and like your talented artists, and see their latest works, never miss  from your favorite artists.</p>
                 </ChooseComp>
 
                 <ChooseComp srcImg={bannerChoose3} >
-                    <div className='text-xl font-bold'>Publish your artwork and connect with community</div>
-                    <div className='mt-6'>Our community is a place where you can publish and share your artwork with people who appreciate it. </div>
+                    <p className='text-lg xl:text-xl font-bold'>Publish your artwork and connect with community</p>
+                    <p className='mt-6 text-sm'>Our community is a place where you can publish and share your artwork with people who appreciate it. </p>
                 </ChooseComp>
             </div>
         </div>
@@ -36,12 +36,12 @@ interface ChooseCompProps {
 
 const ChooseComp = ({ srcImg, children }: ChooseCompProps) => {
     return (
-        <div className='mt-10 rounded-[20px] bg-n90 md:w-[392px]'>
-            <div className='w-fit'>
-                <Image src={srcImg} alt="icon" objectFit="contain" />
+        <div className='mt-10 rounded-[20px] bg-n90 lg:w-[392px]'>
+            <div className='w-full flex justify-center'>
+                <Image className="w-full" src={srcImg} alt="icon" />
             </div>
 
-            <div className='w-full p-8'>
+            <div className='w-full p-6 lg:p-8'>
                 {children}
             </div>
         </div>

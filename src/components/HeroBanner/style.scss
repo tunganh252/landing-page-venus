@@ -69,4 +69,22 @@
       opacity: 0;
     }
   }
+
+  .slide-text-ai {
+    .slick-track {
+      width: 100%;
+    }
+    .slick-arrow {
+      display: none !important;
+    }
+  }
+
+  .hero-banner1 {
+    .slick-track {
+      column-gap: 20px;
+      row-gap: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }

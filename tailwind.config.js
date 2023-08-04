@@ -12,6 +12,9 @@ module.exports = {
         blue: "#01B4FE",
         rose: "#FC779F",
         n90: "#1A1A1A",
+        n70: "#3A3A3A",
+        n50: "#666666",
+        n30: "#999999",
       },
 
       fontFamily: {
