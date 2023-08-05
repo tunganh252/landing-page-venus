@@ -133,22 +133,22 @@ const SlideBanner = () => {
     return (
         <div className='flex justify-center gap-x-5 relative select-none mt-5'>
             <div className='w-[328px] lg:w-fit absolute top-0 left-auto z-10 mt-[_-5px]'>
-                <Image src={overlay_gradient_top_hero} alt="banner" objectFit='contain' />
+                <Image src={overlay_gradient_top_hero} alt="banner" objectFit='contain' loading='lazy' />
             </div>
 
             <Slider {...settings1} className='hero-banner1 w-[154px] h-[480px] lg:w-[255px] lg:h-[664px] overflow-hidden'>
                 {dataSlide1.map((item, index) => (
-                    <Image key={index} src={item.img} alt="banner" width={255} height={320} />
+                    <Image key={index} src={item.img} alt="banner" width={255} height={320} loading='lazy' />
                 ))}
             </Slider>
 
             <Slider {...settings2} className='hero-banner1 w-[154px] h-[480px] lg:w-[255px] lg:h-[664px] overflow-hidden'>
                 {dataSlide2.map((item, index) => (
-                    <Image key={index} src={item.img} alt="banner" width={255} height={320} />
+                    <Image key={index} src={item.img} alt="banner" width={255} height={320} loading='lazy' />
                 ))}
             </Slider>
             <div className='w-[328px] lg:w-fit absolute bottom-0 left-auto z-10 mb-[_-5px]'>
-                <Image src={overlay_gradient_bottom_hero} alt="banner" objectFit='contain' />
+                <Image src={overlay_gradient_bottom_hero} alt="banner" objectFit='contain' loading='lazy' />
             </div>
         </div>
     )

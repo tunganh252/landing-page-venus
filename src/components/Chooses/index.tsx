@@ -38,7 +38,7 @@ const ChooseComp = ({ srcImg, children }: ChooseCompProps) => {
     return (
         <div className='mt-10 rounded-[20px] bg-n90 lg:w-[392px]'>
             <div className='w-full flex justify-center'>
-                <Image className="w-full" src={srcImg} alt="icon" />
+                <Image className="w-full" src={srcImg} alt="icon" loading='lazy' />
             </div>
 
             <div className='w-full p-6 lg:p-8'>

@@ -7,9 +7,6 @@ import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import BtnDowload from '../Atoms/BtnDowload';
 import "./style.scss";
 
-const mailgoConfig = {
-    dark: true,
-};
 export default function Contact() {
 
     const [email, setEmail] = useState<string>('');
@@ -44,7 +41,7 @@ export default function Contact() {
     };
 
     useEffect(() => {
-        mailgo(mailgoConfig);
+        mailgo({ dark: true, });
     }, []);
 
     return (
@@ -55,9 +52,7 @@ export default function Contact() {
                     <p className='xl:text-xl mt-8 w-full'>
                         Fill form below to get in touch with us if there are any concerns or questions.
                     </p>
-                    {/* <a className="dark" href="mailto:info@mailgo.dev"
-                    >info@mailgo.dev (dark mode)</a
-                    > */}
+
                     {/* Contact Form */}
                     <div className="mt-6 lg:mt-[60px]">
                         <form className="form-contact flex flex-col" onSubmit={handleSubmit}>
@@ -95,22 +90,23 @@ export default function Contact() {
                                 />
                             </div>
                             {
-                                !email || !subject || !message ?
-                                    <div className={`flex justify-center items-center rounded-3xl bg-pink w-[145px] h-[52px] select-none opacity-50 cursor-not-allowed mt-6`}>
+                                !helpers.validateEmail(email) || !subject || !message ?
+                                    <button
+                                        className={`flex justify-center items-center rounded-3xl bg-pink w-[145px] h-[52px] mt-6`}
+                                        type="submit"
+                                    >
                                         <p className="font-bold text-black">SUBMIT</p>
-                                    </div>
+                                    </button>
                                     :
                                     <a href={helpers.genMailData(subject, message)} type="submit" className={`flex justify-center items-center rounded-3xl bg-pink w-[145px] h-[52px] mt-6`}>
                                         <p className="font-bold text-black">SUBMIT</p>
                                     </a>
                             }
-
-
                         </form>
                     </div>
                 </div>
                 <div className="banner-contact w-screen h-full xl:w-[735px] xl:h-[880px]">
-                    <Image className="w-full h-full" src={bannerContact} alt="icon" />
+                    <Image className="w-full h-full" src={bannerContact} alt="icon" loading='lazy' />
                 </div>
             </div>
 

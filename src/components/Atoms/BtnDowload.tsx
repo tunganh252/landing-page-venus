@@ -11,7 +11,7 @@ export default function BtnDowload(props: Props) {
     return (
         <div className="w-full h-full hover:border-white border-transparent border-2 box-border transition rounded-3xl">
             <a href={props.type === "apple" ? LINK_DOWLOAD_APPLE : LINK_DOWLOAD_ANDROID} target="_blank">
-                <Image src={props.type === "apple" ? btnDownApple : btnDownAndroid} alt="btn-dowload" />
+                <Image src={props.type === "apple" ? btnDownApple : btnDownAndroid} alt="btn-dowload" loading='lazy' />
             </a>
         </div>
     )
