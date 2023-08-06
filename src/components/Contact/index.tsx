@@ -47,7 +47,7 @@ export default function Contact() {
                 from: COMPANY_MAIL,
                 to: email,
                 subject: subject,
-                html: message,
+                html: `<strong>${message}</strong>`,
             }
 
             sendgrid.send(cfg)

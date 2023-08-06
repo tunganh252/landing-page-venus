@@ -27,6 +27,21 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
+## Update Config
+
+Access the directory [constant.ts](src/assets/utils/constant.ts) folder to change settings constant
+
+```js
+export const LINK_DOWLOAD_APPLE = 'https://www.apple.com/vn/';
+export const LINK_DOWLOAD_ANDROID = 'https://www.android.com/';
+export const COMPANY_MAIL = 'team@venus-ai.app';
+export const LINK_VIDEO_FEATURE = 'https://www.youtube.com/watch?v=XqZsoesa55w';
+```
+
+Update `SENDGRID_API_KEY` in .env to send email by SendGrid
+
+Access the directory [Features Component](src/components/Features/index.tsx) when you can change video (local source or link)
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.

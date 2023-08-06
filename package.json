@@ -1,5 +1,9 @@
 {
-  "name": "with-tailwindcss-app",
+  "name": "landing-page-venus-ai",
+  "author": {
+    "name": "Tung Anh Nguyen",
+    "email": "tunganhnguyen2502@gmail.com"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {

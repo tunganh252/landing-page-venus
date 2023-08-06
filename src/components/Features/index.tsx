@@ -249,13 +249,9 @@ const Feature3 = () => {
                                 alt="Thumbnail"
                                 loading='lazy' />}
                         />
-                        <div className='absolute bottom-10 left-0'>
-                            <Image src={bannerFeature4} alt="features" loading='lazy' />
-                        </div>
                     </div>
                 </div>
             }
-
         </div>
     )
 }
