@@ -1,5 +1,4 @@
 "use client"
-import { SENDGRID_API_KEY } from "@/assets/utils/constant";
 import bannerContact from "@assets/img/banner_contact.png";
 import sendgrid from "@sendgrid/mail";
 import Image from 'next/image';
@@ -62,7 +61,9 @@ export default function Contact() {
     };
 
     useEffect(() => {
-        sendgrid.setApiKey(SENDGRID_API_KEY);
+        if (process.env.SENDGRID_API_KEY) {
+            sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+        }
     }, []);
 
     return (

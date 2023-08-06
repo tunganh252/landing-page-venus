@@ -184,7 +184,17 @@ const Feature3 = () => {
                 windowSize.width >= 1024 &&
                 <div className='hidden lg:flex mt-10 rounded-[30px] bg-black p-[60px] lg:gap-x-[93px]'>
                     <div className='w-7/12 relative'>
-                        <ReactPlayer width="100%" height="100%" playing controls url={"/videos/video_feature.mp4"} light={<Image src={bannerFeature3} alt="Thumbnail" loading='lazy' />} />
+                        {/* Replace */}
+                        <ReactPlayer
+                            playing controls
+                            // url={"/videos/video_feature.mp4"}
+                            url={LINK_VIDEO_FEATURE}
+                            width="100%"
+                            height="100%"
+                            light={<Image src={bannerFeature3}
+                                alt="Thumbnail"
+                                loading='lazy' />}
+                        />
                         <div className='absolute bottom-10 left-0'>
                             <Image src={bannerFeature4} alt="features" loading='lazy' />
                         </div>
@@ -229,8 +239,19 @@ const Feature3 = () => {
                     </p>
 
                     <div className='mt-10'>
-
-                        <ReactPlayer width="100%" height="100%" playing controls url={"/videos/video_feature.mp4"} light={<Image src={bannerFeature3} alt="Thumbnail" loading='lazy' />} />
+                        <ReactPlayer
+                            playing controls
+                            // url={"/videos/video_feature.mp4"}
+                            url={LINK_VIDEO_FEATURE}
+                            width="100%"
+                            height="100%"
+                            light={<Image src={bannerFeature3}
+                                alt="Thumbnail"
+                                loading='lazy' />}
+                        />
+                        <div className='absolute bottom-10 left-0'>
+                            <Image src={bannerFeature4} alt="features" loading='lazy' />
+                        </div>
                     </div>
                 </div>
             }
