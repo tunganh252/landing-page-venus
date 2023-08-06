@@ -1,20 +1,19 @@
 "use client"
-import { useState } from 'react';
-import Slider from 'react-slick';
-import BtnDowload from '../Atoms/BtnDowload';
-import './style.scss';
 import Image from 'next/image';
+import Slider from 'react-slick';
+import BtnDowload from '../BtnDowload';
+import './style.scss';
 
-import HeroBanner1 from "@assets/img/hero_banner1.png"
-import HeroBanner2 from "@assets/img/hero_banner2.png"
-import HeroBanner4 from "@assets/img/hero_banner4.png"
-import HeroBanner5 from "@assets/img/hero_banner5.png"
-import HeroBanner6 from "@assets/img/hero_banner6.png"
-import HeroBanner7 from "@assets/img/hero_banner7.png"
-import HeroBanner8 from "@assets/img/hero_banner8.png"
-import HeroBanner9 from "@assets/img/hero_banner9.png"
-import overlay_gradient_top_hero from "@assets/img/overlay_gradient_top_hero.png"
-import overlay_gradient_bottom_hero from "@assets/img/overlay_gradient_bottom_hero.png"
+import HeroBanner1 from "@assets/img/hero_banner1.png";
+import HeroBanner2 from "@assets/img/hero_banner2.png";
+import HeroBanner4 from "@assets/img/hero_banner4.png";
+import HeroBanner5 from "@assets/img/hero_banner5.png";
+import HeroBanner6 from "@assets/img/hero_banner6.png";
+import HeroBanner7 from "@assets/img/hero_banner7.png";
+import HeroBanner8 from "@assets/img/hero_banner8.png";
+import HeroBanner9 from "@assets/img/hero_banner9.png";
+import overlay_gradient_bottom_hero from "@assets/img/overlay_gradient_bottom_hero.png";
+import overlay_gradient_top_hero from "@assets/img/overlay_gradient_top_hero.png";
 
 export default function HeroBanner() {
     return (

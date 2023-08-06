@@ -1,9 +1,10 @@
 "use client"
+import { COMPANY_MAIL } from "@/assets/utils/constant";
 import bannerContact from "@assets/img/banner_contact.png";
 import sendgrid from "@sendgrid/mail";
 import Image from 'next/image';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import BtnDowload from '../Atoms/BtnDowload';
+import BtnDowload from '../BtnDowload';
 import "./style.scss";
 
 
@@ -43,7 +44,7 @@ export default function Contact() {
         try {
             setLabelBtnSubmit("SENDING")
             const cfg = {
-                from: 'venus-ai@venus.com',
+                from: COMPANY_MAIL,
                 to: email,
                 subject: subject,
                 html: message,
@@ -51,7 +52,8 @@ export default function Contact() {
 
             sendgrid.send(cfg)
         } catch (error) {
-            alert('Send mail error.');
+            alert('Send mail error.',);
+            console.log("ERR_SEND_MAIL: ", JSON.stringify(error));
         } finally {
             setLabelBtnSubmit("SUBMIT")
             setEmail("")

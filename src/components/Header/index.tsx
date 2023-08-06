@@ -1,11 +1,11 @@
 "use client"
-import Image from 'next/image'
-import React, { useState } from 'react'
-import Logo from "@assets/img/logo.png"
 import IconMenuBar from "@assets/img/icon-menu-bar.png"
 import IconMenuClose from "@assets/img/icon-menu-close.png"
-import "./style.scss"
+import Logo from "@assets/img/logo.png"
+import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
+import "./style.scss"
 
 export default function Header() {
     const routes = [{ title: "Intro", href: "intro" }, { title: "Features", href: "features" }, { title: "Why Choose Us", href: "whyChooseUs" }, { title: "Contact", href: "contact" }]

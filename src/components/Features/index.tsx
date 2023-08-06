@@ -10,7 +10,7 @@ import iconFeature1 from "@assets/img/icon_feature1.png"
 import iconFeature2 from "@assets/img/icon_feature2.png"
 import iconFeature3 from "@assets/img/icon_feature3.png"
 import Image from 'next/image'
-import { FormEvent, useRef, useState } from 'react'
+import { FormEvent, useState } from 'react'
 import ReactPlayer from 'react-player/lazy'
 
 export default function Features() {
