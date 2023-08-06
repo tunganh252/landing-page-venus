@@ -1,14 +1,16 @@
 "use client"
-import { helpers } from "@/assets/utils/helpers";
+import { SENDGRID_API_KEY } from "@/assets/utils/constant";
 import bannerContact from "@assets/img/banner_contact.png";
-import mailgo from "mailgo";
+import sendgrid from "@sendgrid/mail";
 import Image from 'next/image';
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import BtnDowload from '../Atoms/BtnDowload';
 import "./style.scss";
 
+
 export default function Contact() {
 
+    const [labelBtnSubmit, setLabelBtnSubmit] = useState<"SUBMIT" | "SENDING">('SUBMIT');
     const [email, setEmail] = useState<string>('');
     const [subject, setSubject] = useState<string>('');
     const [message, setMessage] = useState<string>('');
@@ -25,7 +27,7 @@ export default function Contact() {
         setMessage(e.target.value);
     };
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
         e.preventDefault();
         if (!email.trim()) {
             alert('Please enter a valid email address.');
@@ -38,10 +40,29 @@ export default function Contact() {
         console.log('Email:', email);
         console.log('Subject:', subject);
         console.log('Message:', message);
+
+        try {
+            setLabelBtnSubmit("SENDING")
+            const cfg = {
+                from: 'venus-ai@venus.com',
+                to: email,
+                subject: subject,
+                html: message,
+            }
+
+            sendgrid.send(cfg)
+        } catch (error) {
+            alert('Send mail error.');
+        } finally {
+            setLabelBtnSubmit("SUBMIT")
+            setEmail("")
+            setSubject("")
+            setMessage("")
+        }
     };
 
     useEffect(() => {
-        mailgo({ dark: true, });
+        sendgrid.setApiKey(SENDGRID_API_KEY);
     }, []);
 
     return (
@@ -89,19 +110,12 @@ export default function Contact() {
                                     required
                                 />
                             </div>
-                            {
-                                !helpers.validateEmail(email) || !subject || !message ?
-                                    <button
-                                        className={`flex justify-center items-center rounded-3xl bg-pink w-[145px] h-[52px] mt-6`}
-                                        type="submit"
-                                    >
-                                        <p className="font-bold text-black">SUBMIT</p>
-                                    </button>
-                                    :
-                                    <a href={helpers.genMailData(subject, message)} type="submit" className={`flex justify-center items-center rounded-3xl bg-pink w-[145px] h-[52px] mt-6`}>
-                                        <p className="font-bold text-black">SUBMIT</p>
-                                    </a>
-                            }
+                            <button
+                                className={`flex justify-center items-center rounded-3xl bg-pink w-[145px] h-[52px] mt-6 ${labelBtnSubmit === "SENDING" ? 'select-none opacity-50 cursor-not-allowed' : ''}`}
+                                type="submit"
+                            >
+                                <p className="font-bold text-black">{labelBtnSubmit}</p>
+                            </button>
                         </form>
                     </div>
                 </div>
